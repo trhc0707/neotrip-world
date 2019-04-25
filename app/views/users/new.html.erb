@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Register / 会員登録</div>
+      <div class="panel-body">
+        <%= form_for(@user) do |f| %>
+          <div class="form-group">
+            <%= f.label :first_name, 'First name / 名' %>
+            <%= f.text_field :first_name, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :last_name, 'Last name / 性' %>
+            <%= f.text_field :last_name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email, 'E-mail' %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :phone_number, 'Phone number / 電話番号' %>
+            <%= f.phone_field :phone_number, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :date_of_birth, 'Date of birth / 誕生日' %>
+            <%= f.date_field :date_of_birth, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :live, "Country / 移住国" %><br>
+            <%= f.select :live, [["Australia", "australia"], ["Canada", "canada"], ["Japan", "japan"]],class:"form-control" %>
+
+          <div class="form-group">
+            <%= f.label :state, "State / 都道府県" %><br>
+            <%= f.select :state, [["Australia", "australia"], ["Canada", "canada"], ["Japan", "japan"]],class:"form-control" %>
+
+
+
+          <div class="form-group">
+            <%= f.label :password, 'Password' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, 'Password' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+
+          <div class="text-center">
+            <%= f.submit 'SUBMIT / 登録', class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
