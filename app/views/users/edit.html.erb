@@ -1,0 +1,29 @@
+<h1><% @user %>EDIT USER / ユーザー編集 </h1>
+
+<%= form_for(@user) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :live, "Country / 移住国" %><br>
+    <%= f.select :live, [["Australia", "australia"], ["Canada", "canada"], ["Japan", "japan"]],class:"form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :state, "State / 都道府県" %><br>
+    <%= f.select :state, [["Australia", "australia"], ["Canada", "canada"], ["Japan", "japan"]],class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :profile_content, "Profile / 自己紹介" %><br>
+    <%= f.text_area :profile_content, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :profile_photo_img, "User photo / ユーザー画像" %><br>
+    <%= f.file_field :profile_photo_img, class: 'form-control' %>
+  </div>
+
+
+  <%= f.submit 'SUBMIT' %>
+<% end %>
+
+<%= link_to 'BACK', user_path %>
